@@ -21,25 +21,25 @@ int main(int argc, char** argv)
 {
 
     int vector1[10];
-    int i,sum = 0, num = 0;
+    int i,sum = 0, mult=1;
     
     for(i = 0; i <= 2; i++)
     {
        
-        printf("Enter Number: \n");
-              scanf("%d", &vector1[i]);
-        
-  
-        
+        printf("\nEnter Number:");
+        scanf("%d", &vector1[i]);
+           
     }
     
-    for(int j=1;j <=3;j++)
+    for(int j=0;j <=2;j++)
     {
-        vector1[i] = vector1[i] + 1;
-     
+        sum = sum + vector1[j];
+        mult = mult * vector1[j];
+        
     }
     
-       printf("%d", vector1[i]);
+       printf("%d\n", sum);
+       printf("%d\n", mult);
     return (EXIT_SUCCESS);
 }
 
