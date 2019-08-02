@@ -23,7 +23,7 @@ int main(int argc, char** argv)
     int vector1[10];
     int i,sum = 0, mult=1;
     
-    for(i = 0; i <= 2; i++)
+    for(i = 0; i <= 9; i++)
     {
        
         printf("\nEnter Number:");
@@ -31,7 +31,7 @@ int main(int argc, char** argv)
            
     }
     
-    for(int j=0;j <=2;j++)
+    for(int j=0;j <=9;j++)
     {
         sum = sum + vector1[j];
         mult = mult * vector1[j];

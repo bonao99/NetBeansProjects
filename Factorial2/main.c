@@ -26,7 +26,7 @@ int main(int argc, char** argv)
     scanf("%d",&num);
     res = customFactorial(num);
     
-    printf("\nFact =  : %d",res);
+    printf("\nFactorial =  : %d",res);
     return (EXIT_SUCCESS);
 }
 

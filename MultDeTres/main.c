@@ -34,7 +34,7 @@ int main(int argc, char** argv)
             }
          
             }
-         printf("Count :%d",count);
+         printf("%d Have Count :%d",num,count);
     
  
     
