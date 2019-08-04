@@ -25,10 +25,11 @@ int main(int argc, char** argv)
     int estarray[10][4];
     int correcal;
     int correrest;
-    int avg = 0;
+    int avg;
     for(correrest = 0; correrest <= 9; correrest++)
     {
-        for(correcal = 0;correcal <= 4; correcal++)
+        avg = 0;
+        for(correcal = 0;correcal <= 2; correcal++)
         {
        
             estarray[correrest][correcal]= rand() % 100; 
@@ -36,12 +37,21 @@ int main(int argc, char** argv)
                     
             printf("EST %d\n", estarray[correrest][correcal]);
         }
-            
-
+          estarray[correrest][3]  = avg;
+          
+        
     }
     
-          avg = (avg + estarray[correrest][correcal]) / correcal;
-          printf("\nAVG :%d", avg);
+
+          
+          
+          for(int printest=0;printtest <= 9; printest++)
+          {
+              for(int printcal=0; printcal <= 3;printcal++)
+              {
+                  printf("EST es: %d",printest)
+              }
+          }
           
     return (EXIT_SUCCESS);
 }

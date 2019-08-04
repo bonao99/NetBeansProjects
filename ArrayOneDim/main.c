@@ -23,7 +23,7 @@ int main(int argc, char** argv)
     printf("\n");
     for(int i=0; i < 5; i++)
     {
-        printf("Array One arrayone[%d] is %d \n",i,arrayone[i]);
+        printf("Array One array[%d] is %d \n",i,arrayone[i]);
     }
     
     
