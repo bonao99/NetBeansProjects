@@ -42,7 +42,7 @@ int main(int argc, char** argv)
     {
         printf("\nEst %d Cal %d-%d-%d  AVG :%d\n",printout + 1,arrayestudiantes[printout][0],arrayestudiantes[printout][1],arrayestudiantes[printout][2] ,arrayestudiantes[printout][3]);
     }
-         
+
     return (EXIT_SUCCESS);
 }
 
