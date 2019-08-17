@@ -18,29 +18,30 @@
  * bubble sort array sample
  * 
  */
-int bubblesort(int data); 
+
 
 int main(int argc, char** argv) 
 {
-    int data [] ={2, 25, 4, 78, 96, 45, 0, 11, 459, 9};
+    int data [] ={2, -23, -45, 6, 3, 25, 4, 78, 96, 45, 0, 11, 459, 9};
     int h = sizeof(data)/sizeof(data[0]);
     printf("\n%d\n",h);
     
     for(int i=0; i <= h; i++)
     {
-        for(int j=0; j <= h-1 -1; j++)
+        for(int j=0; j <= h-2; j++)
         {
-            if (data[j] < data[j+1])
+            if (data[j] > data[j+1])
             {
+                int temp = data[j];
                 data[j] = data[j+1];
-                data[j+1] = data[j];
+                data[j+1] = temp;
                 
             }
           
         }
            
     }
-    for(int x=0;x <=9;x++)
+    for(int x=0;x <= h -1 ;x++)
     {
           printf("%d ",data[x]);
     }

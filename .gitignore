@@ -8,6 +8,7 @@
 /RowColumm/dist/
 /FillRowColOne/build/
 /FillRowColOne/dist/
+<<<<<<< HEAD
 /CalNamesInitial/dist/
 /CalNamesInitial/build/
 /ModuloForLoop/dist/
@@ -22,3 +23,11 @@
 /PatternOfThree/dist/
 /Findrepeatvalues/dist/
 /Findrepeatvalues/build/
+=======
+/BubbleSort2/build/
+/BubbleSort2/dist/
+/CalNamesInitial/build/
+/CalNamesInitial/dist/
+>>>>>>> ce8c3bcdad385c651190b77b7a861ff97a9e6c0d
+/CppApplication_4/dist/
+/CppApplication_4/build/
