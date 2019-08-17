@@ -21,6 +21,7 @@ int main(int argc, char** argv)
 {
     int arr[] = {1,0,0,1,1,0,1,0,0,1};
     int large;
+    printf("\n");
     for(int outer=0;outer <= 9;outer++)
     {
         for(int inner=0;inner <= 8;inner ++)
