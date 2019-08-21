@@ -20,6 +20,7 @@
 int main(int argc, char** argv) 
 {
     int arr[100000];
+    int temp = 0;
     printf("\n");
     for(int i = 0;i <= 99999;i ++)
     {
@@ -36,7 +37,7 @@ int main(int argc, char** argv)
       
     for(int j=0;j <= 99999;j ++)
     {
-    if(arr[0] < arr[j])
+    if(arr[0] > arr[j])
     {
         arr[0] = arr[j];
          
