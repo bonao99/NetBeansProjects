@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=CppApplication_4
+PROJECTNAME=FindLargeArraysmallbig
 
 # Active Configuration
 DEFAULTCONF=Debug

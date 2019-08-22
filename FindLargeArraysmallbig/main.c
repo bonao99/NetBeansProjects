@@ -22,7 +22,7 @@ int main(int argc, char** argv)
     int arr[100000];
     int menor = 0;
     int mayor = 0;
-    printf("\n");
+
     for(int i = 0;i <= 99999;i ++)
     {
         arr[i] = rand();
@@ -73,10 +73,10 @@ int main(int argc, char** argv)
       
     }
          
-         
-         printf("Largest : %d\n",mayor);
+        printf("\n");
+        printf("Largest : %d\n",mayor);
     
-    
+     
     return (EXIT_SUCCESS);
 }
 
