@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-/* 
+/* Find array position and value
  * File:   main.c
  * Author: user1
  *
