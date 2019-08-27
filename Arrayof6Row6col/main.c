@@ -21,6 +21,9 @@ int main(int argc, char** argv)
 {
     int arr[5][5];
     int count = 0;
+    int n = 3;
+    int scol = 4;
+    int srow;
     for(int row = 0;row <= 4;row ++)
     {
         
@@ -47,11 +50,49 @@ int main(int argc, char** argv)
             {
                printf("%d ",arr[printinn][printout]);
             }
-           
-              
+         
         }
         printf("\n");
     }
+    
+    
+    for(int outer = 0; outer <= 4; outer ++)
+    {
+       
+        for(int inner = 0;inner <= n; inner ++)
+        {
+            srow = inner + 1 + outer;
+            int temp = arr[outer][inner];
+            arr[outer][inner] = arr[srow][scol];
+            arr[srow][scol] = temp;
+            
+        }
+        n = n - 1;
+        scol = scol - 1;
+    }
+    
+    printf("\n\n");
+       for(int printinn=0;printinn <=  4; printinn++)
+    {
+        
+        for(int printout =0; printout <=  4;printout++)
+        {
+             count = count + 1;
+             
+             
+            if (printout == 5)
+            {
+                printf("\n");
+            }
+            else
+            {
+               printf("%d ",arr[printinn][printout]);
+            }
+         
+        }
+        printf("\n");
+    }
+    
     
     return (EXIT_SUCCESS);
 }
