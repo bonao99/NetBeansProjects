@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=MinGW-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/MinGW-Windows
-CND_ARTIFACT_NAME_Debug=rowcol1and0
-CND_ARTIFACT_PATH_Debug=dist/Debug/MinGW-Windows/rowcol1and0
+CND_ARTIFACT_NAME_Debug=array6by6function
+CND_ARTIFACT_PATH_Debug=dist/Debug/MinGW-Windows/array6by6function
 CND_PACKAGE_DIR_Debug=dist/Debug/MinGW-Windows/package
-CND_PACKAGE_NAME_Debug=rowcol1and0.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/MinGW-Windows/package/rowcol1and0.tar
+CND_PACKAGE_NAME_Debug=array6by6function.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/MinGW-Windows/package/array6by6function.tar
 # Release configuration
-CND_PLATFORM_Release=GNU-Linux
-CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
-CND_ARTIFACT_NAME_Release=rowcol1and0
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/rowcol1and0
-CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=rowcol1and0.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/rowcol1and0.tar
+CND_PLATFORM_Release=MinGW-Windows
+CND_ARTIFACT_DIR_Release=dist/Release/MinGW-Windows
+CND_ARTIFACT_NAME_Release=array6by6function
+CND_ARTIFACT_PATH_Release=dist/Release/MinGW-Windows/array6by6function
+CND_PACKAGE_DIR_Release=dist/Release/MinGW-Windows/package
+CND_PACKAGE_NAME_Release=array6by6function.tar
+CND_PACKAGE_PATH_Release=dist/Release/MinGW-Windows/package/array6by6function.tar
 #
 # include compiler specific variables
 #
