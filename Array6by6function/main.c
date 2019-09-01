@@ -17,7 +17,7 @@
 /*
  * 
  */
-void printarrayfunc(int arrprint[5][5]);
+void printarrayfunc(int arrprint[][5]);
 
 int main(int argc, char** argv)
 {
@@ -64,8 +64,9 @@ int main(int argc, char** argv)
 }
 
 
-void printarrayfunc(int arrprint[5][5])
+void printarrayfunc(int arrprint[][5])
 {
+    
     int count = 0;
        for(int printinn=0;printinn <=  4; printinn++)
     {
