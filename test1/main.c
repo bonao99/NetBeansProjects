@@ -29,8 +29,7 @@ int main(int argc, char** argv)
     b = temp;
     printf("Values after swap A : %d B : %d\n",a,b);
     
-    
-    
+       
     return (EXIT_SUCCESS);
 }
 

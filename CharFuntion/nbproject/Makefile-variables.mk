@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
-CND_ARTIFACT_NAME_Debug=supermarketlist
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/supermarketlist
+CND_ARTIFACT_NAME_Debug=charfuntion
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/charfuntion
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
-CND_PACKAGE_NAME_Debug=supermarketlist.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/supermarketlist.tar
+CND_PACKAGE_NAME_Debug=charfuntion.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/charfuntion.tar
 # Release configuration
-CND_PLATFORM_Release=MinGW-Windows
-CND_ARTIFACT_DIR_Release=dist/Release/MinGW-Windows
-CND_ARTIFACT_NAME_Release=supermarketlist
-CND_ARTIFACT_PATH_Release=dist/Release/MinGW-Windows/supermarketlist
-CND_PACKAGE_DIR_Release=dist/Release/MinGW-Windows/package
-CND_PACKAGE_NAME_Release=supermarketlist.tar
-CND_PACKAGE_PATH_Release=dist/Release/MinGW-Windows/package/supermarketlist.tar
+CND_PLATFORM_Release=GNU-Linux
+CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
+CND_ARTIFACT_NAME_Release=charfuntion
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/charfuntion
+CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
+CND_PACKAGE_NAME_Release=charfuntion.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/charfuntion.tar
 #
 # include compiler specific variables
 #
