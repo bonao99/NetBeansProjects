@@ -22,12 +22,18 @@ int main(int argc, char** argv)
     int arr[5][5];
     int res = 5;
     
+    for(int i =0; i <= 4;i++)
+        for(int j=0;j <=4;j ++)
+            arr[i][j] = 0;
+    
     for(int row = 0;row <= 4;row ++)
     {
-        for(int col = 0;col <= 4;col ++)
+        res = 5;
+        for(int col = 0;col <= row;col ++)
         {
-            res = col * 5;
+            
             arr [row][col] = res;
+            res = res + 5;
             
     }
     }
@@ -36,7 +42,7 @@ int main(int argc, char** argv)
     {
         for(int printinn = 0;printinn <= 4;printinn ++)
         {
-            printf("%d",arr[printout][printinn]);
+            printf("%d ",arr[printout][printinn]);
             if(printinn == 4)
                 printf("\n");
         }
