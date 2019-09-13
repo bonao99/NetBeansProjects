@@ -23,19 +23,22 @@ int main(int argc, char** argv)
     {
         
          
-        for(int min = 1;min <= 1; min++)
+        for(int min = 1;min <= 3; min++)
         {
              
              
             for(int seg = 0; seg <= 59; seg ++)
             {
-             printf("Segundo :%d\n",seg);   
+             printf("Segundo :%d ",seg); 
+             if(seg == 14 || seg == 29 || seg == 44)
+                 printf("\n");
             }
             printf("Min :%d\n",min); 
     }
          printf("HR :%d\n",hr); 
         
     }
+    printf("\n");
     return (EXIT_SUCCESS);
 }
 
