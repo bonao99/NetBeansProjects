@@ -6,6 +6,9 @@
 package javpractice;
 
 /**
+ * Add division part
+ * mult and subtraction
+ * sobrecaragdo and int and double
  *
  * @author tony
  */
