@@ -37,8 +37,8 @@ int reverse(int x)
 
     int res = 0;
     int pop = 0;
-      int  maxint = 2147483649;
-      int  minint = -2147483648;
+    int  maxint = 2147483649;
+    int  minint = -2147483648;
                     
     while(x != 0);
     {
@@ -52,6 +52,7 @@ if(res < minint || res >  maxint)
 {
     return 0;
 }
+
 else 
 {
     return res;
