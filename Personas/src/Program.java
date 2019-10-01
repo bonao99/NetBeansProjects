@@ -13,6 +13,8 @@ public class Program
     public static void main(String[] args)
     {
 
+        
+        /* Comment begin
         Estudiante alfonso = new Estudiante();
         alfonso.setNombre("Alfonso");
         alfonso.setGrado(8);
@@ -29,7 +31,19 @@ public class Program
 
         printEmpleado(myemp); 
         
-       
+       commnet end */ 
+        
+        int unorderedarray[]= {23, 45, 56, 67, 58, 108, 48, 1, 234 };
+        int organizedarray[];
+        
+        Ordenamiento organizer = new Ordenamiento();
+   
+        organizedarray =  organizer.bubblesort(unorderedarray);
+        
+        organizer.printout(unorderedarray);
+        System.out.println("Debajo array ordenado");
+        organizer.printout(organizedarray);
+                
         
                 
     }

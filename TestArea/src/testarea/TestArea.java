@@ -1,17 +1,19 @@
-
-import com.sun.prism.impl.BufferUtil;
-import sun.security.util.Length;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package testarea;
 
 /**
  *
  * @author tony
+ * 
+ * 
+ * 
  */
+
+
 public class Ordenamiento 
 {
  
@@ -35,7 +37,7 @@ public  int[] bubblesort(int arr[])
             
         }  
     }
-
+    System.out.println("array"+arr);
     
       return arr;  
 }
@@ -45,5 +47,18 @@ public void printout(int value[])
     for(int i= 0;i < value.length; i ++)
         System.out.println("Printing value: "+value[i]);
 }
+    
+}
+
+public class TestArea {
+
+
+    public static void main(String[] args)
+    {
+        
+        
+        
+                
+    }
     
 }
