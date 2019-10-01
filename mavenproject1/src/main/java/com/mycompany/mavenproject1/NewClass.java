@@ -3,18 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package com.mycompany.mavenproject1;
 
 /**
  *
  * @author tony
  */
-public class Estudiante        
-        
-{
-
- public Humano Estudiante(String elnombre,String elapellido,int laedad,String elsexo)
-        {
-            
-        }    
+public class NewClass {
+    
 }
- 
