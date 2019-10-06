@@ -3,14 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.mavenproject1;
+package byteshortintlong;
 
 /**
  *
  * @author tony
  */
-public class NewClass 
-{
-     System.out.println("Test Maven project");
+public class CharBoolean {
+
     
 }
