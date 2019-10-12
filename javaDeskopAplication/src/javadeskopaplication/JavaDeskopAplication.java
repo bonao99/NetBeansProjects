@@ -3,17 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.mavenproject1;
+package javadeskopaplication;
 
 /**
  *
  * @author tony
  */
-public class MavenClass 
-{
+public class JavaDeskopAplication {
+
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) 
     {
-       
+    
+        NewJFrame forms = new NewJFrame();
+        forms.setVisible(true);
+        
     }
     
 }
