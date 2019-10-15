@@ -34,7 +34,6 @@ this.setEdad(edad);
 this.setSexo(sexo);
 }
 
-
 public void setidEmpleado(int value)
 {
     idEmpleado = value;
@@ -58,7 +57,6 @@ public String getdepartamento()
     return departamento;
 }
 
-
 public void setsalarioHora(float value)
 {
     salarioHora = value;
@@ -70,20 +68,16 @@ public float getsalarioHora()
     return salarioHora;
 }
 
-
 public float gethorasSemanal()
 {
     return horasSemanal;
 }
-
 
 public void sethorasSemanal(float value)
 {
     horasSemanal = value;
    
 }
-
-
 
 public void setsalarioHorasExtra(float value)
 {
@@ -107,6 +101,5 @@ public float gethoraExtrasSemanal()
 {
     return horaExtrasSemanal;
 }
-
 
 }

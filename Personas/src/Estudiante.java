@@ -15,8 +15,6 @@ private int grado;
 private char seccion;
 
 
-
-
 public void setIdEstudiante(int value)
 {
     idEstudiante = value;

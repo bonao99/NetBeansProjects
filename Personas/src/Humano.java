@@ -60,11 +60,5 @@ public class Humano
  {
      return sexo;
  }
- 
- 
- 
- 
-    
 
-        
 }
