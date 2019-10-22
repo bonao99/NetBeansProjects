@@ -5,6 +5,12 @@
  */
 package formdesign;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author tony
@@ -58,6 +64,11 @@ public class Form extends javax.swing.JFrame {
         jLabel5.setText("*");
 
         jButton1.setText("Save");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Update");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -141,6 +152,32 @@ public class Form extends javax.swing.JFrame {
         jTextField1.setText("");
                 
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        // validate if passwd are the same if not same show error and return
+        try {
+            File file = new File("/home/tony/Desktop/newfile.txt");
+            boolean fvar = file.createNewFile();
+            if (fvar){
+                System.out.println("File has been created successfully");
+                                
+            }
+            else{
+                System.out.println("File already present at the specified location");
+            }
+            
+         
+         FileWriter fr = new FileWriter(file,true);
+         fr.write(jTextField1.getText() + "|" + jPasswordField1.getText() + "\n");
+         
+         fr.close();
+            
+        } catch (IOException ex) {
+            Logger.getLogger(Form.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
