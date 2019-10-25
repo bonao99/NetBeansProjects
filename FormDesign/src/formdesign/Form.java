@@ -161,8 +161,7 @@ public class Form extends javax.swing.JFrame {
         if(jPasswordField1.getText().equals(jPasswordField2.getText()))
         {
         
-        
-        
+                
         try {
             File file = new File("/home/tony/Desktop/newfile.txt");
             boolean fvar = file.createNewFile();
