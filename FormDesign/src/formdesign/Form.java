@@ -5,12 +5,19 @@
  */
 package formdesign;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
+<<<<<<< HEAD
+import javax.swing.JOptionPane;
+=======
+>>>>>>> 821b210c44e1a1c1daba21507ddcfb1179f8a9ef
 
 /**
  *
@@ -144,6 +151,59 @@ public class Form extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        
+        
+        
+        
+                   try {
+            File  file1 = new File("/home/tony/Desktop/newfile.txt");
+            
+            BufferedReader br = new BufferedReader (new FileReader(file1));
+            
+         
+            StringBuilder sb = new StringBuilder();
+            String line = br.readLine();
+            
+            while(line != null)
+            {
+                sb.append(line);
+                sb.append(System.lineSeparator());
+                line = br.readLine();
+                
+                if(line != null)
+                {
+                    
+               
+                    String  field = line.split(";")[0];
+                    
+                    System.out.println(field);
+                
+                    if(field.equals(jTextField1.getText()))
+                    {
+                        
+                        System.out.println("Found Pass" + jTextField1.getText());
+                    }
+                 }
+                
+                
+                System.out.println(line);
+                
+                
+            }
+            
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Form.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Form.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+     
+         
+     
+        
+        
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -175,7 +235,7 @@ public class Form extends javax.swing.JFrame {
             
          
          FileWriter fr = new FileWriter(file,true);
-         fr.write(jTextField1.getText() + "|" + jPasswordField1.getText() + "\n");
+         fr.write(jTextField1.getText() + ";" + jPasswordField1.getText() + "\n");
          
          fr.close();
             
@@ -183,6 +243,15 @@ public class Form extends javax.swing.JFrame {
             Logger.getLogger(Form.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+<<<<<<< HEAD
+        } else
+        {
+            
+            JOptionPane.showMessageDialog(this,"Password do not match" );
+            
+        }
+     
+=======
         }
         else 
         {
@@ -190,6 +259,7 @@ public class Form extends javax.swing.JFrame {
             System.exit(1);
            // Form().setVisible(false);
         }
+>>>>>>> 821b210c44e1a1c1daba21507ddcfb1179f8a9ef
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
