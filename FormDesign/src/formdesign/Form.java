@@ -14,7 +14,10 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
+<<<<<<< HEAD
 import javax.swing.JOptionPane;
+=======
+>>>>>>> 821b210c44e1a1c1daba21507ddcfb1179f8a9ef
 
 /**
  *
@@ -241,6 +244,7 @@ public class Form extends javax.swing.JFrame {
             Logger.getLogger(Form.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+<<<<<<< HEAD
         } else
         {
             
@@ -248,6 +252,15 @@ public class Form extends javax.swing.JFrame {
             
         }
      
+=======
+        }
+        else 
+        {
+            
+            System.exit(1);
+           // Form().setVisible(false);
+        }
+>>>>>>> 821b210c44e1a1c1daba21507ddcfb1179f8a9ef
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
