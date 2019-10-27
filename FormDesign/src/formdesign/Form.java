@@ -6,18 +6,22 @@
 package formdesign;
 
 import java.io.BufferedReader;
+
 import java.io.File;
+
 import java.io.FileNotFoundException;
+
 import java.io.FileReader;
+
 import java.io.FileWriter;
+
 import java.io.IOException;
+
 import java.util.logging.Level;
+
 import java.util.logging.Logger;
-import javax.swing.JFrame;
-<<<<<<< HEAD
+
 import javax.swing.JOptionPane;
-=======
->>>>>>> 821b210c44e1a1c1daba21507ddcfb1179f8a9ef
 
 /**
  *
@@ -52,6 +56,7 @@ public class Form extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        RemoveBlank = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,6 +67,11 @@ public class Form extends javax.swing.JFrame {
         jLabel2.setText("Password");
 
         jPasswordField1.setText("jPasswordField1");
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Code");
 
@@ -92,6 +102,13 @@ public class Form extends javax.swing.JFrame {
             }
         });
 
+        RemoveBlank.setText("RemoveBlank");
+        RemoveBlank.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RemoveBlankActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -116,8 +133,12 @@ public class Form extends javax.swing.JFrame {
                         .addGap(27, 27, 27)
                         .addComponent(jButton2)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3)))
-                .addContainerGap(94, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(RemoveBlank))
+                            .addComponent(jButton3))))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,17 +164,19 @@ public class Form extends javax.swing.JFrame {
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(RemoveBlank)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        
-        
-        
+        // save in new file, remove old file, rename new to old file                 
+              
+               
+        jTextField1.setText(jTextField1.getText().trim().toUpperCase());
         
                    try {
             File  file1 = new File("/home/tony/Desktop/newfile.txt");
@@ -166,31 +189,38 @@ public class Form extends javax.swing.JFrame {
             
             while(line != null)
             {
-                sb.append(line);
-                sb.append(System.lineSeparator());
-                line = br.readLine();
-                
-                if(line != null)
-                {
-                    
+        
                
                     String  field = line.split(";")[0];
                     
                     System.out.println(field);
                 
-                    if(field.equals(jTextField1.getText()))
+                     if(field.equals(jTextField1.getText()))
                     {
-                        
-                        System.out.println("Found Pass" + jTextField1.getText());
+                            sb.append(jTextField1.getText() + ";" + jPasswordField1.getText());
+                             
+                            sb.append(System.lineSeparator());
+                            
+                        // System.out.println("Found Pass" + jTextField1.getText());
                     }
-                 }
-                
+                     else
+                     {
+                         
+                            sb.append(line);
+                            sb.append(System.lineSeparator());
+                         
+                         
+                     }
+              
                 
                 System.out.println(line);
-                
+                  line = br.readLine();
                 
             }
             
+                       System.out.println("---------------------");
+                       System.out.println(sb);
+                       
             
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Form.class.getName()).log(Level.SEVERE, null, ex);
@@ -198,7 +228,7 @@ public class Form extends javax.swing.JFrame {
             Logger.getLogger(Form.class.getName()).log(Level.SEVERE, null, ex);
         }
        
-     
+     // before saving check if duplicate and exit
          
      
         
@@ -208,10 +238,12 @@ public class Form extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         
-        jPasswordField1.setText("");
+         jPasswordField1.setText("");
+
         jPasswordField2.setText("");
+
         jTextField1.setText("");
-                
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -233,7 +265,12 @@ public class Form extends javax.swing.JFrame {
                 System.out.println("File already present at the specified location");
             }
             
-         
+            jTextField1.setText(jTextField1.getText().trim().toUpperCase());
+            
+            
+          jPasswordField1.setText(jPasswordField1.getText().trim());
+           jPasswordField2.setText(jPasswordField2.getText().trim());
+           
          FileWriter fr = new FileWriter(file,true);
          fr.write(jTextField1.getText() + ";" + jPasswordField1.getText() + "\n");
          
@@ -243,7 +280,6 @@ public class Form extends javax.swing.JFrame {
             Logger.getLogger(Form.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-<<<<<<< HEAD
         } else
         {
             
@@ -251,16 +287,18 @@ public class Form extends javax.swing.JFrame {
             
         }
      
-=======
-        }
-        else 
-        {
-            
-            System.exit(1);
-           // Form().setVisible(false);
-        }
->>>>>>> 821b210c44e1a1c1daba21507ddcfb1179f8a9ef
+
+    
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
+
+    private void RemoveBlankActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveBlankActionPerformed
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_RemoveBlankActionPerformed
 
     /**
      * @param args the command line arguments
@@ -298,6 +336,7 @@ public class Form extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton RemoveBlank;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
