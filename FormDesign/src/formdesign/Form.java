@@ -57,6 +57,7 @@ public class Form extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         RemoveBlank = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -109,6 +110,13 @@ public class Form extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setText("Remove Record");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -129,9 +137,12 @@ public class Form extends javax.swing.JFrame {
                             .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(27, 27, 27)
-                        .addComponent(jButton2)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(27, 27, 27)
+                                .addComponent(jButton2))
+                            .addComponent(jButton4))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -165,7 +176,9 @@ public class Form extends javax.swing.JFrame {
                     .addComponent(jButton2)
                     .addComponent(jButton3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(RemoveBlank)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RemoveBlank)
+                    .addComponent(jButton4))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
@@ -180,17 +193,18 @@ public class Form extends javax.swing.JFrame {
         
                    try {
             File  file1 = new File("/home/tony/Desktop/newfile.txt");
+                         
+       
             
             BufferedReader br = new BufferedReader (new FileReader(file1));
-            
-         
-            StringBuilder sb = new StringBuilder();
             String line = br.readLine();
+                        
+            StringBuilder sb = new StringBuilder();
+            
             
             while(line != null)
             {
         
-               
                     String  field = line.split(";")[0];
                     
                     System.out.println(field);
@@ -208,18 +222,30 @@ public class Form extends javax.swing.JFrame {
                          
                             sb.append(line);
                             sb.append(System.lineSeparator());
-                         
-                         
+                            
+                                                 
+                                    
                      }
-              
-                
+                              
                 System.out.println(line);
                   line = br.readLine();
                 
             }
             
+       
+            
                        System.out.println("---------------------");
                        System.out.println(sb);
+            
+                       
+                       
+                         br.close();
+                            
+                        //file1.delete();
+                        
+                       FileWriter fr = new FileWriter(file1,false);
+                       fr.write(sb.toString());
+                       fr.close();
                        
             
         } catch (FileNotFoundException ex) {
@@ -230,9 +256,7 @@ public class Form extends javax.swing.JFrame {
        
      // before saving check if duplicate and exit
          
-     
-        
-        
+                    
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -261,22 +285,23 @@ public class Form extends javax.swing.JFrame {
                 System.out.println("File has been created successfully");
                                 
             }
-            else{
+                else
+            {
                 System.out.println("File already present at the specified location");
             }
             
             jTextField1.setText(jTextField1.getText().trim().toUpperCase());
             
             
-          jPasswordField1.setText(jPasswordField1.getText().trim());
-           jPasswordField2.setText(jPasswordField2.getText().trim());
+        jPasswordField1.setText(jPasswordField1.getText().trim());
+        jPasswordField2.setText(jPasswordField2.getText().trim());
            
-         FileWriter fr = new FileWriter(file,true);
-         fr.write(jTextField1.getText() + ";" + jPasswordField1.getText() + "\n");
-         
-         fr.close();
+        FileWriter fr = new FileWriter(file,true);
+            fr.write(jTextField1.getText() + ";" + jPasswordField1.getText() + "\n");
+            fr.close();
             
-        } catch (IOException ex) {
+        } 
+        catch (IOException ex) {
             Logger.getLogger(Form.class.getName()).log(Level.SEVERE, null, ex);
         }
         
@@ -287,7 +312,6 @@ public class Form extends javax.swing.JFrame {
             
         }
      
-
     
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -299,6 +323,60 @@ public class Form extends javax.swing.JFrame {
         // TODO add your handling code here:
        
     }//GEN-LAST:event_RemoveBlankActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        
+                  
+        jTextField1.setText(jTextField1.getText().trim().toUpperCase());
+        
+                   try {
+            File  file1 = new File("/home/tony/Desktop/newfile.txt");
+                         
+       
+            
+            BufferedReader br = new BufferedReader (new FileReader(file1));
+            String line = br.readLine();                        
+            StringBuilder sb = new StringBuilder();                       
+            while(line != null)
+            {
+                    String  field = line.split(";")[0];
+                    System.out.println(field);
+                if(!field.equals(jTextField1.getText()))
+                    {
+                        sb.append(line);
+                        sb.append(System.lineSeparator());
+                    }
+                                             
+                    System.out.println(line);
+                    line = br.readLine();
+                
+            }            
+                  
+                    System.out.println("---------------------");
+                    System.out.println(sb);
+            
+                       
+                       
+                         br.close();
+                            
+                        //file1.delete();
+                        
+                       FileWriter fr = new FileWriter(file1,false);
+                       fr.write(sb.toString());
+                       fr.close();
+                       
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Form.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Form.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+        
+        
+        
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -340,6 +418,7 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
