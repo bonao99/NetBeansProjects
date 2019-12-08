@@ -18,8 +18,15 @@ using namespace std;
 /*
  * 
  */
-int main(int argc, char** argv) {
-
+int main(int argc, char** argv) 
+{
+    int count = 0;
+    for(int x = 400;x >1; x++)
+    {
+        cout << "X = \n"x;
+        
+        
+    }
     return 0;
 }
 

@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=MinGW-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/MinGW-Windows
-CND_ARTIFACT_NAME_Debug=cppapplication_1
-CND_ARTIFACT_PATH_Debug=dist/Debug/MinGW-Windows/cppapplication_1
+CND_ARTIFACT_NAME_Debug=cppapplication_3
+CND_ARTIFACT_PATH_Debug=dist/Debug/MinGW-Windows/cppapplication_3
 CND_PACKAGE_DIR_Debug=dist/Debug/MinGW-Windows/package
-CND_PACKAGE_NAME_Debug=cppapplication1.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/MinGW-Windows/package/cppapplication1.tar
+CND_PACKAGE_NAME_Debug=cppapplication3.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/MinGW-Windows/package/cppapplication3.tar
 # Release configuration
-CND_PLATFORM_Release=GNU-Linux
-CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
-CND_ARTIFACT_NAME_Release=cppapplication_1
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/cppapplication_1
-CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=cppapplication1.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/cppapplication1.tar
+CND_PLATFORM_Release=MinGW-Windows
+CND_ARTIFACT_DIR_Release=dist/Release/MinGW-Windows
+CND_ARTIFACT_NAME_Release=cppapplication_3
+CND_ARTIFACT_PATH_Release=dist/Release/MinGW-Windows/cppapplication_3
+CND_PACKAGE_DIR_Release=dist/Release/MinGW-Windows/package
+CND_PACKAGE_NAME_Release=cppapplication3.tar
+CND_PACKAGE_PATH_Release=dist/Release/MinGW-Windows/package/cppapplication3.tar
 #
 # include compiler specific variables
 #
