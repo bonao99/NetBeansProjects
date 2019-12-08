@@ -211,17 +211,17 @@ public class Form extends javax.swing.JFrame {
                 
                      if(field.equals(jTextField1.getText()))
                     {
-                            sb.append(jTextField1.getText() + ";" + jPasswordField1.getText());
+                        sb.append(jTextField1.getText() + ";" + jPasswordField1.getText());
                              
-                            sb.append(System.lineSeparator());
+                        sb.append(System.lineSeparator());
                             
                         // System.out.println("Found Pass" + jTextField1.getText());
                     }
                      else
                      {
                          
-                            sb.append(line);
-                            sb.append(System.lineSeparator());
+                        sb.append(line);
+                        sb.append(System.lineSeparator());
                             
                                                  
                                     
@@ -235,11 +235,9 @@ public class Form extends javax.swing.JFrame {
        
             
                        System.out.println("---------------------");
-                       System.out.println(sb);
-            
+                       System.out.println(sb);                                  
                        
-                       
-                         br.close();
+                        br.close();
                             
                         //file1.delete();
                         
@@ -274,11 +272,20 @@ public class Form extends javax.swing.JFrame {
         
         // validate if passwd are the same if not same show error and return
         
-        if(jPasswordField1.getText().equals(jPasswordField2.getText()))
-        {
-        
-                
         try {
+        
+        if(!jPasswordField1.getText().equals(jPasswordField2.getText()))
+        { 
+                     
+            
+            JOptionPane.showMessageDialog(this,"Password do not match" );
+            
+           
+        }
+          
+        
+        else {
+        
             File file = new File("/home/tony/Desktop/newfile.txt");
             boolean fvar = file.createNewFile();
             if (fvar){
@@ -290,27 +297,70 @@ public class Form extends javax.swing.JFrame {
                 System.out.println("File already present at the specified location");
             }
             
-            jTextField1.setText(jTextField1.getText().trim().toUpperCase());
+          
+  
+               
+            jTextField1.setText(jTextField1.getText().trim().toUpperCase());                       
+            jPasswordField1.setText(jPasswordField1.getText().trim());
+            jPasswordField2.setText(jPasswordField2.getText().trim()); 
+            
+            // Begin validation of duplicate records
+              //file File  file1 = new File("/home/tony/Desktop/newfile.txt");
+                         
+       
+            
+            BufferedReader br = new BufferedReader (new FileReader(file));
+            String line = br.readLine();
+                        
+            StringBuilder sb = new StringBuilder();
             
             
-        jPasswordField1.setText(jPasswordField1.getText().trim());
-        jPasswordField2.setText(jPasswordField2.getText().trim());
-           
-        FileWriter fr = new FileWriter(file,true);
+            while(line != null)
+            {
+        
+                    String  field = line.split(";")[0];
+                    
+                    System.out.println(field);
+                
+                     if(field.equals(jTextField1.getText()))
+                    {
+                    JOptionPane.showMessageDialog(this,"record exist !");
+                    jTextField1.setText("");
+                    jPasswordField1.setText("");
+                    jPasswordField2.setText("");
+                    
+                    
+                    br.close();
+                    
+                    return;
+                            
+                        // System.out.println("Found Pass" + jTextField1.getText());
+                    }
+       
+                    line = br.readLine();
+                     
+            }
+                       
+             br.close();
+            
+            //end of records validation
+            
+            FileWriter fr = new FileWriter(file,true);         
             fr.write(jTextField1.getText() + ";" + jPasswordField1.getText() + "\n");
             fr.close();
             
+           
+
+            
+        }
+            
         } 
-        catch (IOException ex) {
-            Logger.getLogger(Form.class.getName()).log(Level.SEVERE, null, ex);
-        }
         
-        } else
-        {
-            
-            JOptionPane.showMessageDialog(this,"Password do not match" );
-            
-        }
+        catch (IOException ex) 
+            {
+            Logger.getLogger(Form.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
      
     
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -331,10 +381,8 @@ public class Form extends javax.swing.JFrame {
         jTextField1.setText(jTextField1.getText().trim().toUpperCase());
         
                    try {
-            File  file1 = new File("/home/tony/Desktop/newfile.txt");
-                         
-       
-            
+            File  file1 = new File("/home/tony/Desktop/newfile.txt");                        
+                   
             BufferedReader br = new BufferedReader (new FileReader(file1));
             String line = br.readLine();                        
             StringBuilder sb = new StringBuilder();                       
