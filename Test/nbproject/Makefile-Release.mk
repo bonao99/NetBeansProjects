@@ -21,8 +21,13 @@ FC=gfortran
 AS=as
 
 # Macros
+<<<<<<< HEAD
 CND_PLATFORM=MinGW-Windows
 CND_DLIB_EXT=dll
+=======
+CND_PLATFORM=GNU-Linux
+CND_DLIB_EXT=so
+>>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
 CND_CONF=Release
 CND_DISTDIR=dist
 CND_BUILDDIR=build
@@ -35,7 +40,11 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+<<<<<<< HEAD
 	${OBJECTDIR}/main.o
+=======
+	${OBJECTDIR}/welcome.o
+>>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
 
 
 # C Compiler Flags
@@ -56,6 +65,7 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
+<<<<<<< HEAD
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/test.exe
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/test.exe: ${OBJECTFILES}
@@ -66,6 +76,18 @@ ${OBJECTDIR}/main.o: main.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.c
+=======
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/test
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/test: ${OBJECTFILES}
+	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/test ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/welcome.o: welcome.cc
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/welcome.o welcome.cc
+>>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
 
 # Subprojects
 .build-subprojects:

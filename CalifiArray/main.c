@@ -14,44 +14,35 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Print each line for est y cal
- *  add [10][4] ultima pos = avg de cal
- * 
- * print all
+/*  
+1 main 
+2 init array [10][4]
+3 llenar array posiciones
+    3.1 cal avg ponerlo en pos 4 de cada est
+4 print values
+5 exit main
  */
 int main(int argc, char** argv)
 {
-
-    int estarray[10][4];
-    int correcal;
-    int correrest;
-    int avg;
-    for(correrest = 0; correrest <= 9; correrest++)
+    int arrayestudiantes[10][4];
+    int avg = 0;
+    for(int row = 0; row <= 9; row++)
     {
         avg = 0;
-        for(correcal = 0;correcal <= 2; correcal++)
+        for(int col = 0; col <= 2; col++)
         {
-       
-            estarray[correrest][correcal]= rand() % 100; 
-            avg = avg + estarray[correrest][correcal];
-      
+            arrayestudiantes[row][col] = rand() % 100;
+            avg = avg + arrayestudiantes[row][col];
         }
-          estarray[correrest][3]  = avg;
-          
-         
-    
-
-          for(int row=0;row<= 9; row++)
-          {
-              for(int cal=0; cal <= 3;cal++)
-              {
-                  printf("EST es: %d\n",estarray[row][cal]);
-                  
-              }
-          }
-           printf("AVG ES :%d",estarray[correrest][3]);
+        avg = avg/3;
+        arrayestudiantes[row][3] = avg;
     }
-          
+    
+    for(int printout =0;printout <= 9; printout++ )
+    {
+        printf("\nEst %d Cal %d-%d-%d  AVG :%d\n",printout + 1,arrayestudiantes[printout][0],arrayestudiantes[printout][1],arrayestudiantes[printout][2] ,arrayestudiantes[printout][3]);
+    }
+
     return (EXIT_SUCCESS);
 }
 
