@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
 <!--
 DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 
@@ -40,6 +43,9 @@ made subject to such option by the copyright holder.
 
 Contributor(s):
 -->
+<<<<<<< HEAD
+>>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
+=======
 >>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
 <configurationDescriptor version="100">
   <projectmakefile>Makefile</projectmakefile>
@@ -48,7 +54,11 @@ Contributor(s):
       <toolsSet>
         <developmentServer>localhost</developmentServer>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <platform>3</platform>
+=======
+        <platform>2</platform>
+>>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
 =======
         <platform>2</platform>
 >>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
@@ -72,8 +82,14 @@ Contributor(s):
         <runcommandpicklist>
           <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
 <<<<<<< HEAD
+<<<<<<< HEAD
         </runcommandpicklist>
         <runcommand>"${OUTPUT_PATH}"</runcommand>
+=======
+          <runcommandpicklistitem>"${OUTPUT_PATH}" "arg 1" "arg 2" "arg 3" "arg 4"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}" "arg 1" "arg 2" "arg 3" "arg 4"</runcommand>
+>>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
 =======
           <runcommandpicklistitem>"${OUTPUT_PATH}" "arg 1" "arg 2" "arg 3" "arg 4"</runcommandpicklistitem>
         </runcommandpicklist>
@@ -91,7 +107,11 @@ Contributor(s):
       <toolsSet>
         <developmentServer>localhost</developmentServer>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <platform>3</platform>
+=======
+        <platform>2</platform>
+>>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
 =======
         <platform>2</platform>
 >>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
@@ -115,8 +135,14 @@ Contributor(s):
         <runcommandpicklist>
           <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
 <<<<<<< HEAD
+<<<<<<< HEAD
         </runcommandpicklist>
         <runcommand>"${OUTPUT_PATH}"</runcommand>
+=======
+          <runcommandpicklistitem>"${OUTPUT_PATH}" "arg 1" "arg 2" "arg 3" "arg 4"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}" "arg 1" "arg 2" "arg 3" "arg 4"</runcommand>
+>>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
 =======
           <runcommandpicklistitem>"${OUTPUT_PATH}" "arg 1" "arg 2" "arg 3" "arg 4"</runcommandpicklistitem>
         </runcommandpicklist>

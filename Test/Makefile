@@ -1,6 +1,9 @@
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
 # Copyright (c) 2009-2010, Oracle and/or its affiliates. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -29,6 +32,9 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
 # THE POSSIBILITY OF SUCH DAMAGE.
 #
+<<<<<<< HEAD
+>>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
+=======
 >>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
 #  There exist several targets which are by default empty and which can be 
 #  used for execution of your targets. These targets are usually executed 
@@ -80,6 +86,10 @@ MKDIR=mkdir
 CP=cp
 CCADMIN=CCadmin
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+RANLIB=ranlib
+>>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
 =======
 RANLIB=ranlib
 >>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
@@ -126,6 +136,7 @@ all: .all-post
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 # build tests
 build-tests: .build-tests-post
 
@@ -146,6 +157,8 @@ test: .test-post
 # Add your post 'test' code here...
 
 
+=======
+>>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
 =======
 >>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
 # help

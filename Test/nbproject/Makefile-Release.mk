@@ -22,8 +22,13 @@ AS=as
 
 # Macros
 <<<<<<< HEAD
+<<<<<<< HEAD
 CND_PLATFORM=MinGW-Windows
 CND_DLIB_EXT=dll
+=======
+CND_PLATFORM=GNU-Linux
+CND_DLIB_EXT=so
+>>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
 =======
 CND_PLATFORM=GNU-Linux
 CND_DLIB_EXT=so
@@ -41,7 +46,11 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 <<<<<<< HEAD
+<<<<<<< HEAD
 	${OBJECTDIR}/main.o
+=======
+	${OBJECTDIR}/welcome.o
+>>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
 =======
 	${OBJECTDIR}/welcome.o
 >>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
@@ -66,6 +75,7 @@ LDLIBSOPTIONS=
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/test.exe
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/test.exe: ${OBJECTFILES}
@@ -77,6 +87,8 @@ ${OBJECTDIR}/main.o: main.c
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.c
 =======
+=======
+>>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/test
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/test: ${OBJECTFILES}
@@ -87,6 +99,9 @@ ${OBJECTDIR}/welcome.o: welcome.cc
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/welcome.o welcome.cc
+<<<<<<< HEAD
+>>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
+=======
 >>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
 
 # Subprojects

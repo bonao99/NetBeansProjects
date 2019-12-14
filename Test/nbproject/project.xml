@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
 <!--
 DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 
@@ -40,6 +43,9 @@ made subject to such option by the copyright holder.
 
 Contributor(s):
 -->
+<<<<<<< HEAD
+>>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
+=======
 >>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
 <project xmlns="http://www.netbeans.org/ns/project/1">
     <type>org.netbeans.modules.cnd.makeproject</type>
@@ -47,15 +53,21 @@ Contributor(s):
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
             <name>Test</name>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <c-extensions>c</c-extensions>
             <cpp-extensions/>
             <header-extensions/>
             <sourceEncoding>UTF-8</sourceEncoding>
 =======
+=======
+>>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
             <make-project-type>0</make-project-type>
             <c-extensions/>
             <cpp-extensions>cc</cpp-extensions>
             <header-extensions>h</header-extensions>
+<<<<<<< HEAD
+>>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
+=======
 >>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
             <make-dep-projects/>
             <sourceRootList/>
@@ -70,6 +82,10 @@ Contributor(s):
                 </confElem>
             </confList>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            <sourceEncoding>UTF-8</sourceEncoding>
+>>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
 =======
             <sourceEncoding>UTF-8</sourceEncoding>
 >>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be

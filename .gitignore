@@ -68,8 +68,12 @@
 /GUIFormExamples/build/
 /DesktopSwingSample/nbproject/private/
 /DesktopSwingSample/build/
+<<<<<<< HEAD
 /TestSwing/build/
 /JavaApplication2/build/
 /JFrameMenuSample/dist/
 /NewJFrameMenuSample/nbproject/private/
 /NewJFrameMenuSample/build/
+=======
+/TestSwing/build/
+>>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be

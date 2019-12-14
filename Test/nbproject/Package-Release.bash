@@ -7,17 +7,23 @@
 # Macros
 TOP=`pwd`
 <<<<<<< HEAD
+<<<<<<< HEAD
 CND_PLATFORM=MinGW-Windows
 CND_CONF=Release
 CND_DISTDIR=dist
 CND_BUILDDIR=build
 CND_DLIB_EXT=dll
 =======
+=======
+>>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
 CND_PLATFORM=GNU-Linux
 CND_CONF=Release
 CND_DISTDIR=dist
 CND_BUILDDIR=build
 CND_DLIB_EXT=so
+<<<<<<< HEAD
+>>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
+=======
 >>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
 NBTMPDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tmp-packaging
 TMPDIRNAME=tmp-packaging
@@ -70,7 +76,11 @@ mkdir -p ${NBTMPDIR}
 cd "${TOP}"
 makeDirectory "${NBTMPDIR}/test/bin"
 <<<<<<< HEAD
+<<<<<<< HEAD
 copyFileToTmpDir "${OUTPUT_PATH}.exe" "${NBTMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}.exe" 0755
+=======
+copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
+>>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
 =======
 copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 >>>>>>> 8efb8c67c3ae005ba130bbf69018ca1bcb2445be
