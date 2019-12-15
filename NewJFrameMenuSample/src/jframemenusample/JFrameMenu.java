@@ -49,6 +49,11 @@ public class JFrameMenu extends javax.swing.JFrame {
         jMenu2.add(jMenuItem1);
 
         jMenuItem2.setText("Contact card");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem2);
 
         jMenuBar1.add(jMenu2);
@@ -70,12 +75,19 @@ public class JFrameMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        
+         // Show text editors on menu
         JFrameFonts textEditors = new JFrameFonts();
         textEditors.setVisible(true);
         
         
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // Show contact form on menu
+        NewContactcard formContacts = new NewContactcard();
+        formContacts.setVisible(true);
+        
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
