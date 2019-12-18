@@ -83,6 +83,11 @@ public class NewContactcard extends javax.swing.JFrame {
         });
 
         jButton2.setText("Edit");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Remove");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -218,9 +223,21 @@ public class NewContactcard extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        jList1.remove(jList1.getSelectedIndex());
+       DefaultListModel<String> model = (DefaultListModel<String>) jList1.getModel();
+       
+       model.remove(jList1.getSelectedIndex());
         
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // edit/replace item
+        
+        DefaultListModel<String> model = (DefaultListModel<String>) jList1.getModel();
+        model.remove(jList1.getSelectedIndex());
+        
+        model.addElement(jTextField4.getText());
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
