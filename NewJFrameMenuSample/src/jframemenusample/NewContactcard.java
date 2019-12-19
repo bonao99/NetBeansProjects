@@ -5,7 +5,9 @@
  */
 package jframemenusample;
 
+
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -74,6 +76,11 @@ public class NewContactcard extends javax.swing.JFrame {
         });
 
         jButton4.setText("Save");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Add");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -233,11 +240,61 @@ public class NewContactcard extends javax.swing.JFrame {
         // edit/replace item
         
         DefaultListModel<String> model = (DefaultListModel<String>) jList1.getModel();
-        model.remove(jList1.getSelectedIndex());
         
-        model.addElement(jTextField4.getText());
+        int itemIndex = jList1.getSelectedIndex();
+        //System.out.println(itemIndex);
+        
+        model.remove(itemIndex);
+        
+        model.add(itemIndex,jTextField4.getText());
         
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // save to show 
+       /* String text1 = jTextField1.getText();
+        String text2 = jTextField2.getText();
+        String text3 = jTextField3.getText();
+        String text4 = jTextField4.getText();
+        
+        Pattern ret1 = Pattern.compile(text1);
+        Matcher mat1 = ret1.matcher(text4);
+        
+        */
+        DefaultListModel<String> model = (DefaultListModel<String>) jList1.getModel();
+        
+        
+        if(jTextField1.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this, "First name is required");
+            jTextField1.requestFocus();
+            return;
+        }
+        
+        if(jTextField2.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this, "Last name is required");
+            jTextField2.requestFocus();
+            return;
+        }
+
+        if(jFormattedTextField1.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this, "Phone number is required");
+            jFormattedTextField1.requestFocus();
+            return;
+        }
+
+        
+        if(model.isEmpty())
+        {
+            JOptionPane.showMessageDialog(this, "At least one email is required");
+            jTextField4.requestFocus();
+            return;
+        }
+
+       
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
