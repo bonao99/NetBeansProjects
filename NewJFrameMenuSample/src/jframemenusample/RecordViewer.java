@@ -95,7 +95,23 @@ public class RecordViewer extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // code for event when windows is opened
-        String userFile = "C:\\Users\\user1\\Documents\\userslist.txt";
+        
+        String userFile ="";
+        String osName = System.getProperty("os.name");
+        String osNameMatch = osName.toLowerCase();
+        System.out.println(osName);
+        
+        if(osNameMatch.contains("linux"))
+            {
+               userFile = "/home/tony/Desktop/userslist.txt";
+            }
+        
+        if(osNameMatch.contains("windows"))
+            {
+               userFile = "C:\\Users\\user1\\Documents\\userslist.txt";   
+            }
+       
+        
         String line;
         String fields [];
         DefaultTableModel model = new  DefaultTableModel();
