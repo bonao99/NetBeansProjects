@@ -96,13 +96,14 @@ public class PrintHolaforPerson extends javax.swing.JFrame {
         int value = Integer.parseInt(jTextArea1.getText());
         
             
-        for(int i = 0; i <= value; i++)
+        for(int i = 1; i <= value; i++)
         {
                 System.out.println(person1);
 
-                for(int n = 0; n <= 5; n++)
+                for(int n = 1; n <= 5; n++)
                 {
-                  System.out.println(person2);     
+                  System.out.println(person2);  
+                  
 
                 }
 
