@@ -6,6 +6,7 @@
 package pathwalker;
 
 import java.io.File;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -63,7 +64,9 @@ public class PathWalk extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(115, 115, 115)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(138, 138, 138))
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -88,43 +91,49 @@ public class PathWalk extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String  rootpath = "";
-        rootpath = jFormattedTextField1.getText();
-        File testPath = new File(rootpath);
+        rootpath = jFormattedTextField1.getText(); //opt
+        File [] listofFiles = new File(rootpath).listFiles();
         
-       // File.pathSeparator
+         
         
         //jTextArea1.setText(rootpath);
         
-        //findPath(testPath);
+      //  findPath(testPath);
         
-        for(int i = 0; i  < testPath.length(); i++ )
-        {
-            
+   if(listofFiles != null)
+            findPath(listofFiles);
+   
+   else
+   {
+       JOptionPane.showMessageDialog(this, "No files found ");
        
-        if(testPath.isDirectory())
-        {
-            System.out.println("Dir :" + findPath(testPath));
-        }
-        if(testPath.isFile())
-        {
-            
-            System.out.println("" + );
-        }
-        }
+   }
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
     
     
-    public void findPath(File path)
+    public void findPath(File [] testPath)
     {
         
-       String [] children = path.list();
-       
-        for(int arr = 0; arr < children.length; arr++)
+        System.out.println("Entrando a find");
+        for(File parent : testPath)
         {
-            System.out.println("arr path " + children[arr]);
+            System.out.println("Dir is" + parent.getPath());
+            if(parent.isDirectory())
+            {
+                System.out.println("In if" + parent.getPath());
+                findPath(parent.listFiles());
+                                
+         
+
+            } 
+            else
+                {
+                    System.out.println("file : " + parent);
+                }
         }
+  
         
     }
     
