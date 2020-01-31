@@ -93,9 +93,7 @@ public class PathWalk extends javax.swing.JFrame {
         String  rootpath = "";
         rootpath = jFormattedTextField1.getText(); //opt
         File [] listofFiles = new File(rootpath).listFiles();
-        
-         
-        
+
         //jTextArea1.setText(rootpath);
         
       //  findPath(testPath);
@@ -104,14 +102,13 @@ public class PathWalk extends javax.swing.JFrame {
             findPath(listofFiles);
    
    else
-   {
-       JOptionPane.showMessageDialog(this, "No files found ");
+     {
+       JOptionPane.showMessageDialog(this, "No files found/Directory do not exist  ");
        
-   }
+     }
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    
     
     public void findPath(File [] testPath)
     {
@@ -124,17 +121,14 @@ public class PathWalk extends javax.swing.JFrame {
             {
                 System.out.println("In if" + parent.getPath());
                 findPath(parent.listFiles());
-                                
-         
-
+     
             } 
             else
                 {
                     System.out.println("file : " + parent);
                 }
         }
-  
-        
+    
     }
     
     /**
