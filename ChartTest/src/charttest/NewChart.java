@@ -9,6 +9,13 @@ package charttest;
  *
  * @author user1
  */
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import org.jfree.chart.ChartFactory;
@@ -103,10 +110,11 @@ public class NewChart extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    /*
+    /* =================Comment=========================
     create dataset
     
-    llamar valores de un archivo
+    llamar valores de un archivo ,   C:\Users\user1\CODE\salesdata.txt
+     
     
       DefaultPieDataset dataset = new DefaultPieDataset( );
       dataset.setValue( "IPhone 5s" , new Double( 20 ) );  
@@ -114,17 +122,49 @@ public class NewChart extends javax.swing.JFrame {
       dataset.setValue( "MotoG" , new Double( 40 ) );    
       dataset.setValue( "Nokia Lumia" , new Double( 10 ) );
     
-    
+    =================Comment=========================
     */
+    
+    
     
       private static PieDataset createDataset( )
       {
-      DefaultPieDataset dataset = new DefaultPieDataset( );
-      dataset.setValue( "IPhone 5s" , new Double( 20 ) );  
-      dataset.setValue( "SamSung Grand" , new Double( 20 ) );   
-      dataset.setValue( "MotoG" , new Double( 40 ) );    
-      dataset.setValue( "Nokia Lumia" , new Double( 10 ) );  
-      return dataset;         
+         DefaultPieDataset dataset = new DefaultPieDataset( );
+         BufferedReader br = null;
+        try {
+                       
+            File cellularBrands = new File("C:\\Users\\user1\\CODE\\salesdata.txt");
+            br  = new BufferedReader(new FileReader(cellularBrands))
+                 
+            String line = br.readLine();
+           String [] records;
+           
+           while(line != null )
+           {
+               //"IPhone 5s",30
+          
+               records = line.split(",");
+               dataset.setValue( records[0] , new Double( records[1] ) );
+               
+              line = br.readLine();
+                         
+                             
+           }
+                                  
+                   
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(NewChart.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(NewChart.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {         
+                br.close();
+            } catch (IOException ex) {
+                Logger.getLogger(NewChart.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+         return dataset;
+            
      }
            
     
@@ -138,13 +178,7 @@ public class NewChart extends javax.swing.JFrame {
 
       return chart;
    }
-   
-    
-    
-    
-    
-    
-    
+        
     
     /**
      * @param args the command line arguments
