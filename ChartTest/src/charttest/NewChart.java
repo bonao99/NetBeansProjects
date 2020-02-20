@@ -111,11 +111,7 @@ public class NewChart extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /* =================Comment=========================
-    create dataset
-    
-    llamar valores de un archivo ,   C:\Users\user1\CODE\salesdata.txt
-     
-    
+    create dataset   
       DefaultPieDataset dataset = new DefaultPieDataset( );
       dataset.setValue( "IPhone 5s" , new Double( 20 ) );  
       dataset.setValue( "SamSung Grand" , new Double( 20 ) );   
@@ -125,8 +121,7 @@ public class NewChart extends javax.swing.JFrame {
     =================Comment=========================
     */
     
-    
-    
+     
       private static PieDataset createDataset( )
       {
          DefaultPieDataset dataset = new DefaultPieDataset( );
@@ -134,19 +129,19 @@ public class NewChart extends javax.swing.JFrame {
         try {
                        
             File cellularBrands = new File("C:\\Users\\user1\\CODE\\salesdata.txt");
-            br  = new BufferedReader(new FileReader(cellularBrands))
-                 
+            br  = new BufferedReader(new FileReader(cellularBrands));                   
+                    
+                    
             String line = br.readLine();
-           String [] records;
+            String [] records;
            
            while(line != null )
            {
                //"IPhone 5s",30
           
                records = line.split(",");
-               dataset.setValue( records[0] , new Double( records[1] ) );
-               
-              line = br.readLine();
+               dataset.setValue( records[0] , new Double( records[1] ) );               
+               line = br.readLine();
                          
                              
            }
