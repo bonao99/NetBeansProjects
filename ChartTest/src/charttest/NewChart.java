@@ -10,6 +10,13 @@ package charttest;
  * @author user1
  */
 import javax.swing.JComponent;
+import javax.swing.JPanel;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.general.DefaultPieDataset;
+import org.jfree.data.general.PieDataset;
+import org.jfree.ui.ApplicationFrame;
 
 public class NewChart extends javax.swing.JFrame {
 
@@ -31,32 +38,126 @@ public class NewChart extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+<<<<<<< HEAD
+=======
+        jPanel1 = new javax.swing.JPanel();
+>>>>>>> 54b0af04d90c62c81a7d7e44eea3367859127e91
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+<<<<<<< HEAD
         jButton1.setText("jButton1");
+=======
+        jButton1.setText("Show Phone Market share");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(140, 140, 140)
+                .addComponent(jButton1)
+                .addContainerGap(349, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 415, Short.MAX_VALUE)
+                .addComponent(jButton1))
+        );
+>>>>>>> 54b0af04d90c62c81a7d7e44eea3367859127e91
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGap(611, 611, 611)
                 .addComponent(jButton1)
                 .addContainerGap(860, Short.MAX_VALUE))
+=======
+                .addGap(36, 36, 36)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+>>>>>>> 54b0af04d90c62c81a7d7e44eea3367859127e91
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGap(139, 139, 139)
                 .addComponent(jButton1)
                 .addContainerGap(573, Short.MAX_VALUE))
+=======
+                .addGap(23, 23, 23)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
+>>>>>>> 54b0af04d90c62c81a7d7e44eea3367859127e91
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        PieDataset data = createDataset();
+        
+        JFreeChart cellPhoneSalesChart = createChart("Cell Phone Market", data);
+        JPanel charPanel = new ChartPanel(cellPhoneSalesChart); 
+        
+        ApplicationFrame form = new ApplicationFrame("Mobil Bussiness");
+        form.setSize( 560 , 367 );    
+        form.setContentPane(charPanel);
+        form.setVisible(true );
+
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    /*
+    create dataset
+    
+    llamar valores de un archivo
+    
+      DefaultPieDataset dataset = new DefaultPieDataset( );
+      dataset.setValue( "IPhone 5s" , new Double( 20 ) );  
+      dataset.setValue( "SamSung Grand" , new Double( 20 ) );   
+      dataset.setValue( "MotoG" , new Double( 40 ) );    
+      dataset.setValue( "Nokia Lumia" , new Double( 10 ) );
+    
+    
+    */
+    
+      private static PieDataset createDataset( )
+      {
+      DefaultPieDataset dataset = new DefaultPieDataset( );
+      dataset.setValue( "IPhone 5s" , new Double( 20 ) );  
+      dataset.setValue( "SamSung Grand" , new Double( 20 ) );   
+      dataset.setValue( "MotoG" , new Double( 40 ) );    
+      dataset.setValue( "Nokia Lumia" , new Double( 10 ) );  
+      return dataset;         
+     }
+           
+    
+  private static JFreeChart createChart(String title, PieDataset dataset ) {
+      JFreeChart chart = ChartFactory.createPieChart(      
+         title,   // chart title 
+         dataset,          // data    
+         true,             // include legend   
+         true, 
+         false);
+
+      return chart;
+   }
+   
     /**
      * @param args the command line arguments
      */
@@ -89,10 +190,21 @@ public class NewChart extends javax.swing.JFrame {
             public void run() {
                 new NewChart().setVisible(true);
             }
+        
         });
-    }
+               
+        }
+                
+                
+                
+                
+                
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+<<<<<<< HEAD
+=======
+    private javax.swing.JPanel jPanel1;
+>>>>>>> 54b0af04d90c62c81a7d7e44eea3367859127e91
     // End of variables declaration//GEN-END:variables
 }
