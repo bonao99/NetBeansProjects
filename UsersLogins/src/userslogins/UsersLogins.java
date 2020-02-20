@@ -3,25 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package charttest;
-
-import javafx.scene.chart.PieChart;
-import javafx.scene.chart.PieChartBuilder;
+package userslogins;
 
 /**
  *
- * @author user1
+ * @author tony
  */
-public class ChartTest {
+public class UsersLogins {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       // PieChart chartTest = new PieChartBuilder().width(800)
-                
-        
     }
     
 }
