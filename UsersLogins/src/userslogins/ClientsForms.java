@@ -111,6 +111,11 @@ public class ClientsForms extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         jButton3.setText("Update");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         jButton4.setText("Remove");
@@ -290,10 +295,8 @@ public class ClientsForms extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try 
         {
-              String id_Number = jTextField2.getText();
-
-            String select = "SELECT * from crvrentaldb.customers where id_number =" + id_Number;
-                    
+            String id_Number = jTextField2.getText();
+            String select = "SELECT * from crvrentaldb.customers where id_number =" + id_Number;                    
             //String SQL = "INSERT INTO crvrentaldb.customers(full_name, id, DOB, address, marital_status) values(id_Numb full_Name, idUser, dob, addressCust, maritalStatus) returning id_number";
            
             Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/MEJIA", "postgres", "polo99");
@@ -301,9 +304,7 @@ public class ClientsForms extends javax.swing.JFrame {
             ResultSet rs = st.executeQuery(select);
             
             if(rs.first())
-            {
-            
-             
+            {                       
             
             //jTextField2.setText(rs.getNString(id_number));
             jFormattedTextField1.setText(rs.getString("full_name"));
@@ -311,6 +312,7 @@ public class ClientsForms extends javax.swing.JFrame {
             jFormattedTextField2.setText(rs.getString("DOB"));
             jFormattedTextField3.setText(rs.getString("address"));
             jComboBox1.setSelectedItem(rs.getString("marital_status"));
+           
             }
             rs.close();
             st.close();
@@ -323,6 +325,38 @@ public class ClientsForms extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        try {
+            // TODO add your handling code here:
+            String id_Number = jTextField2.getText();
+            String full_Name = jFormattedTextField1.getText();
+            String idUser = jTextField3.getText();
+            String dob = jFormattedTextField2.getText();
+            String addressCust = jFormattedTextField3.getText();
+                     
+            String maritalStatus;
+            
+
+            maritalStatus = jComboBox1.getSelectedItem().toString();
+            
+           
+          
+            String SQL = "UPDATE crvrentaldb.customers SET full_name ='" + full_Name + "', DOB = '" + dob + "', address = '"+ addressCust + "', marital_status = '"+  maritalStatus +"' WHERE id_number ="+ id_Number ;
+            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/MEJIA", "postgres", "polo99");
+            Statement st = conn.createStatement(ResultSet.CLOSE_CURSORS_AT_COMMIT, ResultSet.TYPE_SCROLL_INSENSITIVE);
+            //ResultSet rs = st.executeQuery(SQL);
+              st.execute(SQL);
+              st.close();
+              conn.close();
+            
+
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ClientsForms.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
