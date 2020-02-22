@@ -120,6 +120,11 @@ public class ClientsForms extends javax.swing.JFrame {
 
         jButton4.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         jButton4.setText("Remove");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(51, 51, 255));
@@ -282,7 +287,7 @@ public class ClientsForms extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-            String status[] = { "married", "single", "divorced" };
+            String status[] = { "", "married", "single", "divorced" };
             DefaultComboBoxModel model = new DefaultComboBoxModel(status);
             jComboBox1.setModel(model);
             jComboBox1.setEditable(false);
@@ -350,8 +355,9 @@ public class ClientsForms extends javax.swing.JFrame {
               st.execute(SQL);
               st.close();
               conn.close();
-              JOptionPane.showMessageDialog(this, "Users account has been updated !");
+              JOptionPane.showMessageDialog(this, "User account has been updated !");
             
+ 
 
             
         } catch (SQLException ex) {
@@ -359,6 +365,39 @@ public class ClientsForms extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        try {
+            // TODO add your handling code here:
+
+            
+            String id_Number = jTextField2.getText();
+            String deleteRecord = "DELETE from crvrentaldb.customers where id_number = " + id_Number;
+            
+            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/MEJIA", "postgres", "polo99");
+            Statement st = conn.createStatement(ResultSet.CLOSE_CURSORS_AT_COMMIT, ResultSet.TYPE_SCROLL_INSENSITIVE);
+            //ResultSet rs = st.executeQuery(SQL);
+            st.execute(deleteRecord);
+            st.close();
+            conn.close();
+            
+              jTextField2.setText("");
+              jFormattedTextField1.setText("");
+              jTextField3.setText("");
+              jFormattedTextField2.setText("");
+              jComboBox1.setSelectedItem("");
+              
+            
+            JOptionPane.showMessageDialog(this, "User account has been deleted !");
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ClientsForms.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+
+          
+        
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
