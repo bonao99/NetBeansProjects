@@ -15,6 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -349,6 +350,7 @@ public class ClientsForms extends javax.swing.JFrame {
               st.execute(SQL);
               st.close();
               conn.close();
+              JOptionPane.showMessageDialog(this, "Users account has been updated !");
             
 
             
