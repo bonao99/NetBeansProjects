@@ -254,7 +254,7 @@ public class ClientsForms extends javax.swing.JFrame {
           // JComboBox maritalStat = new JComboBox(status);
           // maritalStat.getSelectedItem();
             
-            String SQL = "INSERT INTO crvrentaldb.customers(full_name, DOB, address, marital_status) values('"+full_Name + "','" + ,'" + dob+"','"+ addressCust +"','"+ maritalStatus +"') returning id_number";
+             String SQL = "INSERT INTO crvrentaldb.customers(full_name, DOB, address, marital_status) values('"+full_Name + "','" + dob + "','"+ addressCust +"','"+ maritalStatus +"') returning id_number";
             
             //String SQL = "INSERT INTO crvrentaldb.customers(full_name, id, DOB, address, marital_status) values(id_Numb full_Name, idUser, dob, addressCust, maritalStatus) returning id_number";                     
            
