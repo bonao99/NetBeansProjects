@@ -230,7 +230,7 @@ public class ClientsForms extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
         
-        try {
+        
             // TODO add your handling code here:
           
            
@@ -258,11 +258,12 @@ public class ClientsForms extends javax.swing.JFrame {
             
             //String SQL = "INSERT INTO crvrentaldb.customers(full_name, id, DOB, address, marital_status) values(id_Numb full_Name, idUser, dob, addressCust, maritalStatus) returning id_number";                     
            
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/MEJIA", "postgres", "polo99");
+          /*  Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/MEJIA", "postgres", "polo99");
             Statement st = conn.createStatement(ResultSet.CLOSE_CURSORS_AT_COMMIT, ResultSet.TYPE_SCROLL_INSENSITIVE);
             ResultSet rs = st.executeQuery(SQL);
-            
-            System.out.println(SQL);
+            */
+            DBConnect conn = new DBConnect();
+            conn.excute(SQL);
             
             if(rs.next())
             {
@@ -270,13 +271,9 @@ public class ClientsForms extends javax.swing.JFrame {
                 jTextField2.setText(rs.getString(1));
                 
             }
-            rs.close();
-            st.close();
-            conn.close();
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(ClientsForms.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
+
+  
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
