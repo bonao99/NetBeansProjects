@@ -5,6 +5,7 @@
  */
 package userslogins;
 
+import com.sun.rowset.CachedRowSetImpl;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -12,17 +13,15 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.sql.rowset.CachedRowSet;
+import javax.sql.rowset.RowSetFactory;
+import javax.sql.rowset.RowSetProvider;
 
 /**
  *
  * @author tony
  */
-public class DBConnect {
-    
-    
-    
-    
-    
+public class DBConnect {   
 
     private  Connection getConnect() 
     {
@@ -54,8 +53,7 @@ public class DBConnect {
                 st.execute(sql);
                 st.close();
                 conn.close();
-                
-                
+                                
             } catch (SQLException ex) {
             Logger.getLogger(DBConnect.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -63,5 +61,32 @@ public class DBConnect {
         
         
     }
+    
+        public CachedRowSet excuteReturnquerry(String sql)
+    {
+        CachedRowSet rowset = null;
+        try 
+            {
+                
+                Connection conn = getConnect();  
+
+                Statement st = conn.createStatement(ResultSet.CLOSE_CURSORS_AT_COMMIT, ResultSet.TYPE_SCROLL_INSENSITIVE);
+                ResultSet rs = st.executeQuery(sql);              
+                rowset = new CachedRowSetImpl();
+                rowset.populate(rs);
+                rs.close();
+                st.close();
+                conn.close();                            
+               
+                
+            } catch (SQLException ex) {
+            Logger.getLogger(DBConnect.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    return rowset;
+        
+    }
+    
+    
     
 }
