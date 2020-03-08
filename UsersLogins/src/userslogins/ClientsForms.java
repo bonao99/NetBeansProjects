@@ -13,6 +13,7 @@ import java.sql.Statement;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.sql.rowset.CachedRowSet;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
@@ -231,18 +232,19 @@ public class ClientsForms extends javax.swing.JFrame {
         
         
         
+        try {
             // TODO add your handling code here:
-          
-           
+            
+            
             String id_Number = jTextField2.getText();
             String full_Name = jFormattedTextField1.getText();
             
             String dob = jFormattedTextField2.getText();
             String addressCust = jFormattedTextField3.getText();
-             
-           // jComboBox1<String> list = String[] { "mariied", "single", "divorced" };
-                
-
+            
+            // jComboBox1<String> list = String[] { "mariied", "single", "divorced" };
+            
+            
             
             String maritalStatus;
             //jComboBox1.addItem("married");
@@ -251,27 +253,32 @@ public class ClientsForms extends javax.swing.JFrame {
             
             //System.out.println(maritalStatus);
             
-          // JComboBox maritalStat = new JComboBox(status);
-          // maritalStat.getSelectedItem();
+            // JComboBox maritalStat = new JComboBox(status);
+            // maritalStat.getSelectedItem();
             
-             String SQL = "INSERT INTO crvrentaldb.customers(full_name, DOB, address, marital_status) values('"+full_Name + "','" + dob + "','"+ addressCust +"','"+ maritalStatus +"') returning id_number";
+            String SQL = "INSERT INTO crvrentaldb.customers(full_name, DOB, address, marital_status) values('"+full_Name + "','" + dob + "','"+ addressCust +"','"+ maritalStatus +"') returning id_number";
             
-            //String SQL = "INSERT INTO crvrentaldb.customers(full_name, id, DOB, address, marital_status) values(id_Numb full_Name, idUser, dob, addressCust, maritalStatus) returning id_number";                     
-           
-          /*  Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/MEJIA", "postgres", "polo99");
+            //String SQL = "INSERT INTO crvrentaldb.customers(full_name, id, DOB, address, marital_status) values(id_Numb full_Name, idUser, dob, addressCust, maritalStatus) returning id_number";
+            
+            /*  Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/MEJIA", "postgres", "polo99");
             Statement st = conn.createStatement(ResultSet.CLOSE_CURSORS_AT_COMMIT, ResultSet.TYPE_SCROLL_INSENSITIVE);
             ResultSet rs = st.executeQuery(SQL);
             */
             DBConnect conn = new DBConnect();
-            conn.excute(SQL);
             
-            if(rs.next())
+            CachedRowSet customerData = conn.excuteQuerry(SQL);
+            
+           
+            if(customerData.first())
             {
             
-                jTextField2.setText(rs.getString(1));
+                jTextField2.setText(customerData.getString("id_number"));
                 
             }
-
+        } catch (SQLException ex) {
+            Logger.getLogger(ClientsForms.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
 
   
         
@@ -365,32 +372,20 @@ public class ClientsForms extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        try {
-            // TODO add your handling code here:
-
-            
-            String id_Number = jTextField2.getText();
-            String deleteRecord = "DELETE from crvrentaldb.customers where id_number = " + id_Number;
-            
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/MEJIA", "postgres", "polo99");
-            Statement st = conn.createStatement(ResultSet.CLOSE_CURSORS_AT_COMMIT, ResultSet.TYPE_SCROLL_INSENSITIVE);
-            //ResultSet rs = st.executeQuery(SQL);
-            st.execute(deleteRecord);
-            st.close();
-            conn.close();
-            
-              jTextField2.setText("");
-              jFormattedTextField1.setText("");
-              jTextField3.setText("");
-              jFormattedTextField2.setText("");
-              jComboBox1.setSelectedItem("");
-              
-            
-            JOptionPane.showMessageDialog(this, "User account has been deleted !");
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(ClientsForms.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        // TODO add your handling code here:
+        
+        
+        String id_Number = jTextField2.getText();
+        String deleteRecord = "DELETE from crvrentaldb.customers where id_number = " + id_Number;
+        DBConnect conn = new DBConnect();
+        conn.excute(deleteRecord);
+        
+        jTextField2.setText("");
+        jFormattedTextField1.setText("");
+        jTextField3.setText("");
+        jFormattedTextField2.setText("");
+        jComboBox1.setSelectedItem("");
+        JOptionPane.showMessageDialog(this, "User account has been deleted !");
             
 
           
