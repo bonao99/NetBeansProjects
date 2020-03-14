@@ -96,7 +96,7 @@ public class ClientsForms extends javax.swing.JFrame {
         jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("yyyy-MM-dd"))));
 
         jButton2.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
-        jButton2.setText("Edit");
+        jButton2.setText("Search Customer");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -108,7 +108,6 @@ public class ClientsForms extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
         jComboBox1.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
 
         jButton3.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
@@ -230,10 +229,10 @@ public class ClientsForms extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-        
+              // this button save user
         
         try {
-            // TODO add your handling code here:
+      
             
             
             String id_Number = jTextField2.getText();
@@ -241,34 +240,17 @@ public class ClientsForms extends javax.swing.JFrame {
             
             String dob = jFormattedTextField2.getText();
             String addressCust = jFormattedTextField3.getText();
-            
-            // jComboBox1<String> list = String[] { "mariied", "single", "divorced" };
-            
-            
-            
+         
             String maritalStatus;
-            //jComboBox1.addItem("married");
-
+         
             maritalStatus = jComboBox1.getSelectedItem().toString();
-            
-            //System.out.println(maritalStatus);
-            
-            // JComboBox maritalStat = new JComboBox(status);
-            // maritalStat.getSelectedItem();
-            
+          
             String SQL = "INSERT INTO crvrentaldb.customers(full_name, DOB, address, marital_status) values('"+full_Name + "','" + dob + "','"+ addressCust +"','"+ maritalStatus +"') returning id_number";
             
-            //String SQL = "INSERT INTO crvrentaldb.customers(full_name, id, DOB, address, marital_status) values(id_Numb full_Name, idUser, dob, addressCust, maritalStatus) returning id_number";
-            
-            /*  Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/MEJIA", "postgres", "polo99");
-            Statement st = conn.createStatement(ResultSet.CLOSE_CURSORS_AT_COMMIT, ResultSet.TYPE_SCROLL_INSENSITIVE);
-            ResultSet rs = st.executeQuery(SQL);
-            */
             DBConnect conn = new DBConnect();
             
             CachedRowSet customerData = conn.excuteQuerry(SQL);
-            
-           
+                       
             if(customerData.first())
             {
             
@@ -299,17 +281,17 @@ public class ClientsForms extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2KeyPressed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // this button edit a record
         try 
         {
             String id_Number = jTextField2.getText();
             
             String select = "SELECT * from crvrentaldb.customers where id_number =" + id_Number;                    
-            //String SQL = "INSERT INTO crvrentaldb.customers(full_name, id, DOB, address, marital_status) values(id_Numb full_Name, idUser, dob, addressCust, maritalStatus) returning id_number";
-           
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/MEJIA", "postgres", "polo99");
-            Statement st = conn.createStatement(ResultSet.CLOSE_CURSORS_AT_COMMIT, ResultSet.TYPE_SCROLL_INSENSITIVE);
-            ResultSet rs = st.executeQuery(select);
+            DBConnect conn = new DBConnect();
             
+            CachedRowSet rs = conn.excuteQuerry(select);
+            
+           
             if(rs.first())
             {                       
             
@@ -325,9 +307,9 @@ public class ClientsForms extends javax.swing.JFrame {
              JOptionPane.showMessageDialog(this, "Record entered do not exist");
                 
             }
+            
             rs.close();
-            st.close();
-            conn.close();
+
                     
             
         } catch (SQLException ex) {
@@ -338,41 +320,24 @@ public class ClientsForms extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        try {
-            // TODO add your handling code here:
-            String id_Number = jTextField2.getText();
-            String full_Name = jFormattedTextField1.getText();
-            String idUser = jTextField3.getText();
-            String dob = jFormattedTextField2.getText();
-            String addressCust = jFormattedTextField3.getText();
-                     
-            String maritalStatus;
-            
-
-            maritalStatus = jComboBox1.getSelectedItem().toString();
-            
-           
-          
-            String SQL = "UPDATE crvrentaldb.customers SET full_name ='" + full_Name + "', DOB = '" + dob + "', address = '"+ addressCust + "', marital_status = '"+  maritalStatus +"' WHERE id_number ="+ id_Number ;
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/MEJIA", "postgres", "polo99");
-            Statement st = conn.createStatement(ResultSet.CLOSE_CURSORS_AT_COMMIT, ResultSet.TYPE_SCROLL_INSENSITIVE);
-            //ResultSet rs = st.executeQuery(SQL);
-              st.execute(SQL);
-              st.close();
-              conn.close();
-              JOptionPane.showMessageDialog(this, "User account has been updated !");
-            
- 
-
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(ClientsForms.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        // This button update user
+        String id_Number = jTextField2.getText();
+        String full_Name = jFormattedTextField1.getText();
+        String idUser = jTextField3.getText();
+        String dob = jFormattedTextField2.getText();
+        String addressCust = jFormattedTextField3.getText();
+        String maritalStatus;
+        maritalStatus = jComboBox1.getSelectedItem().toString();
+        
+        String SQL = "UPDATE crvrentaldb.customers SET full_name ='" + full_Name + "', DOB = '" + dob + "', address = '"+ addressCust + "', marital_status = '"+  maritalStatus +"' WHERE id_number ="+ id_Number ;
+        DBConnect conn = new DBConnect();
+        conn.excute(SQL);
+        JOptionPane.showMessageDialog(this, "User account has been updated !");
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        // This button delete a user
         
         
         String id_Number = jTextField2.getText();

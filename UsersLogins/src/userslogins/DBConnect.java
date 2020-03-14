@@ -14,8 +14,7 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sql.rowset.CachedRowSet;
-import javax.sql.rowset.RowSetFactory;
-import javax.sql.rowset.RowSetProvider;
+
 
 /**
  *
@@ -86,7 +85,8 @@ public class DBConnect {
     return rowset;
         
     }
-    
-    
+           
+        
+        
     
 }
